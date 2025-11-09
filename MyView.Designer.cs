@@ -54,6 +54,8 @@ namespace portfolioTUI {
             this.label.Text = "Hello there,\nI am Tobias Mayn!\nWelcome to my TUI Portfolio Site";
             this.label.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
             this.Add(this.label);
+            
+            //  Toggle visibilty of Label on keypress
             this.AddCommand(Command.Accept, () => 
                 {
                     visible = !visible;
