@@ -11,9 +11,9 @@ namespace portfolioTUI {
     using Terminal.Gui;
     
     
-    public partial class MyView {
+    public partial class LandingPageView {
         
-        public MyView() {
+        public LandingPageView() {
             InitializeComponent();
         }
     }

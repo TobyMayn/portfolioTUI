@@ -21,27 +21,16 @@ namespace portfolioTUI {
     using System.Drawing;
     
     
-    public partial class MyView : Terminal.Gui.Views.Window {
+    public partial class LandingPageView : Terminal.Gui.Views.Window {
+        
         
         private Terminal.Gui.Views.Label label;
         
         private bool visible = true;    
-        
 
+        public void InitializeComponent() {
 
-        private void InitializeComponent() {
             this.label = new Terminal.Gui.Views.Label();
-            this.Width = Dim.Fill(0);
-            this.Height = Dim.Fill(0);
-            this.X = 0;
-            this.Y = 0;
-            this.Visible = true;
-            this.Arrangement = Terminal.Gui.ViewBase.ViewArrangement.Overlapped;
-            this.CanFocus = true;
-            this.ShadowStyle = Terminal.Gui.ViewBase.ShadowStyle.None;
-            this.Modal = false;
-            this.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
-            this.Title = "Portfolio TUI";
             this.label.Width = Dim.Auto();
             this.label.Height = Dim.Auto();
             this.label.X = Pos.Center();
@@ -52,18 +41,10 @@ namespace portfolioTUI {
             this.label.ShadowStyle = Terminal.Gui.ViewBase.ShadowStyle.None;
             this.label.Data = "label";
             this.label.Text = "Hello there,\nI am Tobias Mayn!\nWelcome to my TUI Portfolio Site";
+            this.KeyBindings.Clear();
             this.label.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
             this.Add(this.label);
             
-            //  Toggle visibilty of Label on keypress
-            this.AddCommand(Command.Accept, () => 
-                {
-                    visible = !visible;
-                    this.label.Visible = visible;
-                    return true;
-                }
-            );
-            this.KeyBindings.Add(Key.A, Command.Accept);
         }
     }
 }
