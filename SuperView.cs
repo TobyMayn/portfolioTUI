@@ -33,9 +33,13 @@ namespace portfolioTUI {
             //  Toggle visibility of Label on keypress
             this.AddCommand(Command.Accept, () => 
                 {
-                    this.Remove(landingPage);
-                    this.Add(aboutPage);
-                    this.HasFocus = true;
+                    if (!aboutPage.IsCurrentTop)
+                    {
+                        this.RemoveAll();
+                        this.Add(aboutPage);
+                        aboutPage.HasFocus = true;
+                        return true;
+                    }
                     return true;
                 }
             );
@@ -43,10 +47,14 @@ namespace portfolioTUI {
 
             this.AddCommand(Command.Edit, () =>
                 {
-                    this.Remove(aboutPage);
-                    this.Add(landingPage);
-                    this.HasFocus = true;
+                    if (!landingPage.IsCurrentTop)
+                    {
+                        this.RemoveAll();
+                        this.Add(landingPage);
+                        this.HasFocus = true;
 
+                        return true;
+                    }
                     return true;
                 }
             );
