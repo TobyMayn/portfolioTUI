@@ -41,7 +41,6 @@ namespace portfolioTUI {
             this.label.ShadowStyle = Terminal.Gui.ViewBase.ShadowStyle.None;
             this.label.Data = "label";
             this.label.Text = "Hello there,\nI am Tobias Mayn!\nWelcome to my TUI Portfolio Site";
-            this.KeyBindings.Clear();
             this.label.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
             this.Add(this.label);
             
