@@ -29,20 +29,42 @@ namespace portfolioTUI
 
             var appBar = new MenuBarv2(new MenuBarItemv2[]
             {
-                new MenuBarItemv2("_About", new MenuItemv2 []
+                new MenuBarItemv2("_Navigation", new MenuItemv2 []
                 {
+                    new MenuItemv2("_Landing Page", "", () =>
+                    {
+                        win.RemoveAll();
+                        win.Add(new LandingPageView());
+                    }),
+
                     new MenuItemv2("_About Page", "", () =>
                     {
-                        win.RemoveAll<LandingPageView>();
+                        win.RemoveAll();
                         win.Add(new AboutPageView());
                     }),
+                    new MenuItemv2("_Projects Page", "", () => 
+                    { 
+                        win.RemoveAll();
+                        win.Add(new ProjectsPageView());
+                    }),
+                    new MenuItemv2("_Skills Page", "", () => 
+                    { 
+                        win.RemoveAll();
+                        win.Add(new SkillsPageView());
+                    }),
+                    new MenuItemv2("_Experiences Page", "", () => 
+                    { 
+                        win.RemoveAll();
+                        win.Add(new ExperiencePageView());
+                    }),
+                    new MenuItemv2("_Contact Page", "", () => 
+                    { 
+                        win.RemoveAll();
+                        win.Add(new ContactPageView());
+                    }),
+                    
+
                 }),
-                new MenuBarItemv2("_Landing Page", new MenuItemv2[]
-                {
-                    new MenuItemv2("_Landing Page", "", () => { 
-                        win.RemoveAll<AboutPageView>();
-                        win.Add(new LandingPageView());})
-                })
             });
             win.Add(new LandingPageView());
             app.Add(appBar, win);
