@@ -12,7 +12,7 @@ namespace portfolioTUI {
     using System.Drawing;
     
     
-    public partial class ExperiencePageView : Terminal.Gui.Views.Window {
+    public partial class ExperiencePageView : View {
         
         
         private Terminal.Gui.Views.Label label;
@@ -20,6 +20,11 @@ namespace portfolioTUI {
         private bool visible = true;    
 
         public void InitializeComponent() {
+
+            this.X = 0;
+            this.Y = 0;
+            this.Width = Dim.Auto();
+            this.Height = Dim.Auto();
 
             this.label = new Terminal.Gui.Views.Label();
             this.label.Width = Dim.Auto();

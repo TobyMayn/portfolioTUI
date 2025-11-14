@@ -12,7 +12,7 @@ namespace portfolioTUI {
     using System.Drawing;
     
     
-    public partial class ContactPageView : Terminal.Gui.Views.Window {
+    public partial class ContactPageView : View {
         
         
         private Terminal.Gui.Views.Label label;
@@ -20,6 +20,11 @@ namespace portfolioTUI {
         private bool visible = true;    
 
         public void InitializeComponent() {
+
+            this.X = 0;
+            this.Y = 0;
+            this.Width = Dim.Auto();
+            this.Height = Dim.Auto();
 
             this.label = new Terminal.Gui.Views.Label();
             this.label.Width = Dim.Auto();
@@ -31,7 +36,7 @@ namespace portfolioTUI {
             this.label.CanFocus = false;
             this.label.ShadowStyle = Terminal.Gui.ViewBase.ShadowStyle.None;
             this.label.Data = "label";
-            this.label.Text = "Hello there, this is the experience page";
+            this.label.Text = "Hello there, this is the contact page";
             this.KeyBindings.Clear();
             this.label.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
             this.Add(this.label);

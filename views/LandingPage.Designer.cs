@@ -21,14 +21,19 @@ namespace portfolioTUI {
     using System.Drawing;
     
     
-    public partial class LandingPageView : Terminal.Gui.Views.Window {
-        
+    public partial class LandingPageView : View 
+    {
         
         private Terminal.Gui.Views.Label label;
         
         private bool visible = true;    
 
         public void InitializeComponent() {
+
+            this.X = 0;
+            this.Y = 0;
+            this.Width = Dim.Fill(); 
+            this.Height = Dim.Fill();
 
             this.label = new Terminal.Gui.Views.Label();
             this.label.Width = Dim.Auto();
