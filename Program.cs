@@ -17,6 +17,20 @@ namespace portfolioTUI
         {
             Application.Init();
 
+            var app = InitApp();
+
+            try
+            {
+                Application.Run(app);
+            }
+            finally
+            {
+                Application.Shutdown();
+            }
+        }
+
+        private static Toplevel InitApp()
+        {
             var app = new Toplevel();
             var win = new Window()
             {
@@ -33,15 +47,7 @@ namespace portfolioTUI
 
             router.NavigateTo(PortfolioPage.Home);
             app.Add(appBar, win);
-            
-            try
-            {
-                Application.Run(app);
-            }
-            finally
-            {
-                Application.Shutdown();
-            }
+            return app;
         }
         
     }
