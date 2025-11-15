@@ -12,6 +12,7 @@ namespace portfolioTUI
     using Terminal.Gui.Views;
     internal static class Program
     {
+        
         private static void Main()
         {
             Application.Init();
@@ -27,47 +28,12 @@ namespace portfolioTUI
                 Height = Dim.Fill()
             };
 
-            var appBar = new MenuBarv2(new MenuBarItemv2[]
-            {
-                new MenuBarItemv2("_Navigation", new MenuItemv2 []
-                {
-                    new MenuItemv2("_Landing Page", "", () =>
-                    {
-                        win.RemoveAll();
-                        win.Add(new LandingPageView());
-                    }),
+            var router = new ViewRouter(win);
+            var appBar = new NavBar(router).AppBar;
 
-                    new MenuItemv2("_About Page", "", () =>
-                    {
-                        win.RemoveAll();
-                        win.Add(new AboutPageView());
-                    }),
-                    new MenuItemv2("_Projects Page", "", () => 
-                    { 
-                        win.RemoveAll();
-                        win.Add(new ProjectsPageView());
-                    }),
-                    new MenuItemv2("_Skills Page", "", () => 
-                    { 
-                        win.RemoveAll();
-                        win.Add(new SkillsPageView());
-                    }),
-                    new MenuItemv2("_Experiences Page", "", () => 
-                    { 
-                        win.RemoveAll();
-                        win.Add(new ExperiencePageView());
-                    }),
-                    new MenuItemv2("_Contact Page", "", () => 
-                    { 
-                        win.RemoveAll();
-                        win.Add(new ContactPageView());
-                    }),
-                    
-
-                }),
-            });
-            win.Add(new LandingPageView());
+            router.NavigateTo(PortfolioPage.Home);
             app.Add(appBar, win);
+            
             try
             {
                 Application.Run(app);
