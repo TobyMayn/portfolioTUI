@@ -101,7 +101,7 @@ namespace portfolioTUI {
                 string message = this.messageInput.Text.ToString();
 
                 // For demonstration, just show a message box
-                MessageBox.Query(50, 7, "Submitted", $"Name: {name}\nEmail: {email}\nMessage: {message}", "OK");
+                MessageBox.Query(50, 10, "Submitted", $"Name: {name}\nEmail: {email}\nMessage: {message}", "OK");
             };
 
             this.Add (
