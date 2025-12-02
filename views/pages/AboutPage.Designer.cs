@@ -59,7 +59,10 @@ ______________________________________";
             this.label.CanFocus = false;
             this.label.ShadowStyle = Terminal.Gui.ViewBase.ShadowStyle.None;
             this.label.Data = "label";
-            this.label.Text = "Hello there, This is the About Page!";
+            this.label.Text = @"I am a highly motivated newly graduated Software Engineer with a passion for Full-Stack and Embedded Development. I have professional experience with Python,
+both scripting and Object Oriented development.
+I have a track record of automating manual tasks, enabling more time for the important ones.
+I am a detailed-oriented fast learner, driven by a passion for problem-solving and becoming an excellent engineer.";
             this.label.TextAlignment = Terminal.Gui.ViewBase.Alignment.Start;
             this.Add(this.label);
         }
